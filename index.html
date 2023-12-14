@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ranked Match Calculator</title>
+    <script>
+        let vitorias = parseInt(prompt("Digite a quantidade de vitórias do herói: "));
+        while(vitorias > 0) {
+            let derrotas = Math.abs(parseInt(prompt("Digite a quantidade de derrotas do herói: ")));
+            let nivel = calcula_nivel(vitorias, derrotas);
+            let saldoVitorias = vitorias -derrotas;
+            console.log(`O Herói tem de saldo de **${saldoVitorias}** está no nível de **${nivel}**`);
+            alert(`O Herói tem de saldo de **${saldoVitorias}** está no nível de **${nivel}**`);
+            vitorias = parseInt(prompt("Digite a quantidade de vitórias do herói: "));            
+        }
+
+        function calcula_nivel(vitorias, derrotas) {
+
+            let diferenca = vitorias -derrotas;
+            if(diferenca <= 10)
+                resultado = "Ferro";
+            else if(diferenca >= 11 && diferenca <= 20)
+                resultado = "Bronze";
+            else if(diferenca >= 21 && diferenca <= 50)
+                resultado = "Prata";
+            else if(diferenca >= 51 && diferenca <= 80)
+                resultado = "Ouro";
+            else if(diferenca >= 81 && diferenca <= 90)
+                resultado = "Diamante";
+            else if(diferenca >= 91 && diferenca <= 100)
+                resultado = "Lendário";
+            else if(diferenca >= 101)
+                resultado = "Imortal";
+            
+            return resultado;
+        }
+    </script>
+</head>
+<body>
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaNzXJjg5o8kxswWKbBgcYHh9BJlg97AxoDw&usqp=CAU" width="100%" height="95%" />
+</body>
+</html>
